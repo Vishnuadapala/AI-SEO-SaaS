@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI SEO Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🚀 AI SEO Generator</h1>
+
+    <form method="POST">
+        <input type="text" name="topic" placeholder="Enter blog topic..." required>
+        <button type="submit">Generate</button>
+    </form>
+
+    
+    {% if result %}
+
+<div class="result-container">
+
+    <div class="card">
+        <h3>SEO Title</h3>
+        <p>{{ result.title }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Meta Description</h3>
+        <p>{{ result.meta }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Keywords</h3>
+        <p>{{ result.keywords }}</p>
+    </div>
+
+    <div class="card full">
+        <h3>Blog Outline</h3>
+        <pre>{{ result.outline }}</pre>
+    </div>
+
+    <div class="card full">
+        <h3>FAQ</h3>
+        <pre>{{ result.faq }}</pre>
+    </div>
+
+    <div class="card full">
+        <h3>Full Blog</h3>
+        <pre>{{ result.blog }}</pre>
+    </div>
+
+</div>
+
+{% endif %}
+</div>
+
+</body>
+</html>
